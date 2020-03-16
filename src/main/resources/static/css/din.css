@@ -1,0 +1,23 @@
+h4 {
+	text-align: center
+}
+
+.sup {
+	width: 5%;
+	margin-top: 1%;
+	margin-left: 1%;
+}
+
+.btn-danger{
+	border: 1px solid #9b4355;
+}
+
+.card  {
+	width: 50%;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	background-color: #f8f3f4;
+}
+

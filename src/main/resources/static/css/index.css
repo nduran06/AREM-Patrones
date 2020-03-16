@@ -1,0 +1,19 @@
+table thead {
+  background-color: #cee2eb;
+}
+
+.table{
+	width: 70%;
+	margin: 0 auto;
+	
+}
+
+.userCont{
+	text-align:center;
+}
+
+.sup{
+	width: 5%;
+	margin-top: 1%;
+	margin-left: 1%;
+}
