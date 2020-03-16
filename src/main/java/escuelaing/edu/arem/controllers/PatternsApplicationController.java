@@ -27,14 +27,20 @@ public class PatternsApplicationController {
 	
 	@Autowired
 	private PatternsApplicationServices paServices;
-	
-	
 
+	/**
+	 * Method that returns all users 
+	 * @return Collection of users
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<User>  getAllUsers() {
 		return paServices.getAllUsers();
 	}
 	
+	/**
+	 * Method to add new user
+	 * @param user New user
+	 */
     @RequestMapping(method = RequestMethod.POST,  consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addUser(@RequestBody User user){
     	paServices.addUser(user);

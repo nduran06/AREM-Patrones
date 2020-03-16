@@ -1,4 +1,4 @@
-package escuelaing.edu.arem.dao.impl;
+package escuelaing.edu.arem.persistence.impl;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -11,38 +11,49 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import escuelaing.edu.arem.dao.UserDAO;
 import escuelaing.edu.arem.model.User;
+import escuelaing.edu.arem.persistence.UserDAO;
 
 @Repository("postgresql")
 public class UserPostgresImpl implements UserDAO{
-	
+
 	@Autowired
-    private JdbcTemplate jdbcTemplate;
-	
+	private JdbcTemplate jdbcTemplate;
+
+	/**
+	 * Database mapper
+	 *
+	 */
 	private static class UserRowMapper implements RowMapper<User> {
 
-        @Override
-        public User mapRow(ResultSet resultSet, int i) throws SQLException {
-            User user = new User();
-            user.setName(resultSet.getString("user_name"));;
-            user.setBirthday(resultSet.getDate("user_birth"));
-            user.setDocument(resultSet.getString("user_doc"));
-            user.setPhone(resultSet.getString("user_phone"));
-            user.setEmail(resultSet.getString("user_email"));
+		@Override
+		public User mapRow(ResultSet resultSet, int i) throws SQLException {
+			User user = new User();
+			user.setName(resultSet.getString("user_name"));
+			;
+			user.setBirthday(resultSet.getDate("user_birth"));
+			user.setDocument(resultSet.getString("user_doc"));
+			user.setPhone(resultSet.getString("user_phone"));
+			user.setEmail(resultSet.getString("user_email"));
 
-            return user;
-        }
-    }
+			return user;
+		}
+	}
 	
 
+	/**
+	 * Get all users on database
+	 */
 	@Override
 	public Collection<User> getAllUsers() {
 		final String sql = "SELECT * FROM pt_user";
 		List<User> users = jdbcTemplate.query(sql, new UserRowMapper());
 		return users;
 	}
-
+	
+	/**
+//	 * Add a new user to database
+	 */
 	@Override
 	public void addUser(User user) {
         final String sql = "INSERT INTO pt_user (user_name, user_birth, user_doc, user_phone, user_email) VALUES (?, ?, ?, ?, ?)";		

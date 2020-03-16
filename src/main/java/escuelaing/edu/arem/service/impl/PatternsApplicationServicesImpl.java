@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import escuelaing.edu.arem.dao.UserDAO;
 import escuelaing.edu.arem.model.User;
+import escuelaing.edu.arem.persistence.UserDAO;
 import escuelaing.edu.arem.service.PatternsApplicationServices;
 
 @Service
@@ -28,22 +28,6 @@ public class PatternsApplicationServicesImpl implements PatternsApplicationServi
 		this.userDAO.addUser(u);
 		
 	}
-	
-	/*private UserRepository userRepository;
-	
-	public PatternsApplicationServicesImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
-	@Override
-	public List<User> getAllUsers() {
-		return this.userRepository.findAll();
-	}
-
-	@Override
-	public void addUser(User u) {
-		this.userRepository.save(u);
-		
-	}*/
 
 }

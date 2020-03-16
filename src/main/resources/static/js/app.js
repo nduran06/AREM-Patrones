@@ -17,6 +17,7 @@ var app = (function () {
 	
 	
 	var getTable = function (users) {
+		
         $("#usersTableBody").empty();
         users.map(function (user) {
             $("#usersTableBody").append(
