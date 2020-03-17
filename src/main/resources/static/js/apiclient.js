@@ -1,5 +1,5 @@
 var apiclient = (function () {
-    var appUrl = 'http://localhost:8080/patterns';
+    var appUrl = "http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/patterns";
 
     return {
     	
