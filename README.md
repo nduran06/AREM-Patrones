@@ -1,11 +1,18 @@
-# Laboratory 6
+# Laboratory 6-Patrones Arquitecturales
 
 
 ## Prerequisitos
 
+- Se debe tener una cuenta en AWS o AWS Educate
+
 [AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Faws.amazon.com%2Fmarketplace%2Fmanagement%2Fsignin%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Faws-mp-seller-management-portal&forceMobileApp=0)
 
 [AWS Educate](https://www.awseducate.com/signin/SiteLogin)
+
+## Repositorios 
+
+[EC2](https://github.com/nduran06/AREM-Patrones.git)
+[S3](https://github.com/nduran06/Patterns-Static.git)
 
 ## Instalaciones
 
@@ -103,7 +110,6 @@ Ref: https://www.tecmint.com/install-apache-maven-on-centos-7/
 6. Crear una nueva regla. En esta ocasión se va a realizar para el acceso a la base de datos Postgresql cuyo puerto es el 5432, y se está permitiendo el acceso a todos (0.0.0.0/0 - ::/0)
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/vpc/6.png)
-![](https://github.com/nduran06/AREM-Patrones/blob/master/images/vpc/7.png)
 
 ### Creación de la Base de Datos
 
@@ -300,7 +306,7 @@ Ref: https://www.tecmint.com/install-apache-maven-on-centos-7/
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/s3/6.png)
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/s3/7.png)
 
-4.  Luego aparecerá esta pantalla
+4. Luego aparecerá esta pantalla
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/s3/8.png)
 
@@ -332,7 +338,7 @@ Ref: https://www.tecmint.com/install-apache-maven-on-centos-7/
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/s3/15.png)
 
-7. Arrastramos los archivos que se desean subir
+7. Arrastramos los archivos que se desean subir (los del repositorio [S3](https://github.com/nduran06/Patterns-Static.git))
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/s3/16.png)
 
@@ -370,7 +376,7 @@ ssh -i "MyFirstKey.pem" ec2-user@ec2-3-85-221-208.compute-1.amazonaws.com
 
 3. Realizamos las instalaciones necesarias (git, java, maven) indicadas previamente
 
-4.  Clonamos el repositorio de git 
+4.  Clonamos el repositorio de git [EC2](https://github.com/nduran06/AREM-Patrones.git)
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/conexion/3.png)
 
@@ -378,20 +384,34 @@ ssh -i "MyFirstKey.pem" ec2-user@ec2-3-85-221-208.compute-1.amazonaws.com
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/conexion/4.png)
 
-6. Empaquetamos el proyecto: mvn package y lo ejecutamos el proyecto: mvn spring-boot:run
+6. 
+
+- Empaquetamos el proyecto 
+
+```markdown
+mvn package
+``` 
+
+- Ejecutamos el proyecto
+
+```markdown
+mvn spring-boot:run
+```
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/conexion/5.png)
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/conexion/6.png)
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/conexion/7.png)
 
+- URLs accesos
+
 ```markdown
-http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/index.html
-http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/user.html
-http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/patterns
+[](http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/index.html)
+[](http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/user.html)
+[](http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/patterns)
 ```
 ### Funcionamiento
 
-EC2
+#### EC2
 
 ```markdown
 http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/index.html
@@ -403,10 +423,10 @@ http://ec2-3-85-221-208.compute-1.amazonaws.com:8080/user.html
 ```
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/funcionalidad/2.png)
 
-S3
+#### S3
 
 ```markdown
-https://jpatterns.s3.amazonaws.com/index.html
+[](https://jpatterns.s3.amazonaws.com/index.html)
 ```
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/funcionalidad/3.png)
 
@@ -420,55 +440,32 @@ https://jpatterns.s3.amazonaws.com/index.html
 
 2)
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/funcionalidad/7.png)
-![](https://github.com/nduran06/AREM-Patrones/images/funcionalidad/8.png)
+![](https://github.com/nduran06/AREM-Patrones/blob/master/images/funcionalidad/8.png)
 
 3)
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/funcionalidad/9.png)
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/funcionalidad/10.png)
 
-## Running the application
 
-For compile the application:
+### Costos
 
-```markdown
-$ mvn clean compile
-```
-For packing:
+#### EC2
 
-```markdown
-$ mvn package
-```
+![](https://github.com/nduran06/AREM-Patrones/blob/master/images/costos/ec2.png)
 
-To generate javadoc, you can run:
+#### S3
 
-```markdown
-$ mvn javadoc:javadoc
-$ mvn javadoc:jar
-$ mvn javadoc:aggregate
-$ mvn javadoc:aggregate-jar
-$ mvn javadoc:test-javadoc
-$ mvn javadoc:test-jar
-$ mvn javadoc:test-aggregate
-$ mvn javadoc:test-aggregate-jar
-```
-You can go to /tarjet/site to see the documentation 
+![](https://github.com/nduran06/AREM-Patrones/blob/master/images/costos/s3.png)
 
-For specific execute:
+#### Base de datos RDS-PostgreSQL
 
-For running Server class
-```markdown
-$ mvn exec:java -Dexec.mainClass="edu.escuelaing.arem.server.Server"
-```
-For running Client class
-```markdown
-$ mvn exec:java -Dexec.mainClass="edu.escuelaing.arem.client.StartClients" -Dexec.args="#pageURL# #NumberOfClients#"
-```
-
-
+![](https://github.com/nduran06/AREM-Patrones/blob/master/images/costos/db1.png)
+![](https://github.com/nduran06/AREM-Patrones/blob/master/images/costos/db2.png)
 
 ## Built With
 
 *   [`Maven`](https://maven.apache.org/) - Dependency Management
+*   [`Spring`](https://spring.io/) - Framework
 
 ## Authors
 
