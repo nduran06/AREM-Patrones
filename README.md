@@ -85,21 +85,21 @@ Ref: https://www.tecmint.com/install-apache-maven-on-centos-7/
 
 ## Tutorial
 
-### Creación de VPC 
+### Creación de Grupo de Seguridad-Base de datos
 
 1. Buscar en los servicios ofrecidos VPC
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/vpc/1.png)
 
-2. Dar click en Launch VPC Wizard
+2. Dar click en Security Groups al costado izquierdo
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/vpc/2.png)
 
-3. Insertar información del VPC
+3. Insertar información del grupo
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/vpc/3.png)
 
-4. Dar click sobre la VPC recién creada
+4. Dar click sobre el grupo recién creado
 
 ![](https://github.com/nduran06/AREM-Patrones/blob/master/images/vpc/4.png)
 
