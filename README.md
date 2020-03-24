@@ -11,8 +11,12 @@
 
 ## Repositorios 
 
-[EC2](https://github.com/nduran06/AREM-Patrones.git)
+[EC2](https://github.com/nduran06/AREM-PatternsEC2)
 [S3](https://github.com/nduran06/Patterns-Static.git)
+
+## Video explicación
+
+[Video](https://github.com/nduran06/AREM-Patrones/blob/master/video/videoA.mp4)
 
 ## Instalaciones
 
